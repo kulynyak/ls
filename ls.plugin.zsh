@@ -1,8 +1,8 @@
 #!/usr/bin/env zsh
 
 
-if ! =ls --version >/dev/null 2>&1 ; then
-  echo This plugin doesn\'t support BSD ls, please install GNU ls
+if ! =gls --version >/dev/null 2>&1 ; then
+  echo Please install GNU ls
   return -1
 fi
 
