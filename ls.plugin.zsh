@@ -36,7 +36,7 @@ function ls(){
 compdef ls=ls
 
 function l(){
-  $_LS $(_is_ls_colored) -C $@
+  $_LS $(_is_ls_colored)  -l -A $@
 }
 compdef l=ls
 
