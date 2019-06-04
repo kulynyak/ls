@@ -36,7 +36,11 @@ function ls(){
 compdef ls=ls
 
 function l(){
-  $_LS $(_is_ls_colored)  -l -A $@
+  if [[ "$CLICOLOR" = 1 ]]; then
+    $_GRC  $_LS $(_is_ls_colored) -lA $@
+  else
+    $_LS -lA $@
+  fi
 }
 compdef l=ls
 
@@ -46,7 +50,6 @@ function la(){
 compdef la=ls
 
 function ll(){
-  
   if [[ "$CLICOLOR" = 1 ]]; then
     $_GRC  $_LS $(_is_ls_colored) -l $@
   else
